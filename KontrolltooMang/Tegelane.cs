@@ -70,9 +70,9 @@ namespace KontrolltooMang
             return esed.Count;
         }
 
-
-
-
-
+        internal void LisaEse(Ese ese)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
