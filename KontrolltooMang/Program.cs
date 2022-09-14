@@ -1,7 +1,5 @@
 ﻿using KontrolltooMang;
 using System.Runtime.InteropServices;
 
-Ese ese = new Ese("Bob", 15);
-Tegelane tegelane = new Tegelane("Bebra");
-ese.info();
+Tegelane tegelane = new Tegelane("Anatoly");
 tegelane.info();

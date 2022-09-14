@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KontrolltooMang
 {
-    class Ese : IUksus //наследует от IUksus
+    internal class Ese : IUksus //наследует от IUksus
     {
         public int punktArv;
         private string nimetus;
@@ -16,13 +16,14 @@ namespace KontrolltooMang
             this.nimetus = nimetus;
             this.punktArv = punktArv;
         }
-        public int PunktideArv() //Meetod punktideArv tagastab punktide arvu.
+        public int punktideArv() //Meetod punktideArv tagastab punktide arvu.
         {
             return punktArv;
         }
 
         public string info() //Meetod info tagastab selle eseme nimetuse.
         {
+            Console.WriteLine(nimetus);
             return nimetus;
         }
 

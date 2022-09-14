@@ -6,17 +6,11 @@ using System.Threading.Tasks;
 
 namespace KontrolltooMang
 {
-    interface IUksus
+    internal interface IUksus
     {
-        int punktideArv() //int-tüüpi parameetriteta meetodit punktideArv;
-        {
-            throw new NotImplementedException();
-        }
+        int punktideArv(); //int-tüüpi parameetriteta meetodit punktideArv;
 
-        string info() //String-tüüpi parameetriteta meetodit info.
-        {
-            throw new NotImplementedException();
-        }
+        string info(); //String-tüüpi parameetriteta meetodit info.
 
     }
 }
