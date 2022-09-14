@@ -15,9 +15,8 @@ namespace KontrolltooMang
         private string nimi;
         public string info() //Meetod info tagastab tegelase info tekstina, näidates tegelase nime, esemete arvu ja punktidearvu.
         {
-            string tegelase_info;
-            tegelase_info = nimi + "," + esed.Count() + "," + punktideArv();
-            return tegelase_info;
+            return $"Mängija {nimi}. Info: \n" + $"Ese summa {esed.Count}" + $"Punktide arv {punktideArv()}";
+            
 
 
             /*Console.WriteLine($"Nimi: {nimi}");

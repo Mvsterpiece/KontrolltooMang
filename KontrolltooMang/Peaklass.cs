@@ -36,15 +36,15 @@ namespace KontrolltooMang
         static Tegelane[] MostTegelane(int tegCount)
         {
             if (tegCount < 4) throw new Exception();
-            Tegelane[] plrs = new Tegelane[tegCount];
+            Tegelane[] teges = new Tegelane[tegCount];
             for (int i = 0; i < tegCount; i++)
             {
-                Tegelane plr = new Tegelane(getNimi());
-                plrs[i] = plr;
+                Tegelane tege = new Tegelane(getNimi());
+                teges[i] = tege;
             }
 
 
-            return giveOutItems(plrs);
+            return giveOutItems(teges);
         }
 
         public static void GenEse<T>(this IList<T> list) //Iga tegelase jaoks genereeritakse juhuslik arv n vahemikust [2,10], mis näitab selle tegelase esemete arvu.Iga tegelase jaoks valitakse juhuslikult n eset.Selleks tuleb kasutadaGollections.shuffle meetodit.Antud meetod võtab argumendiks listi ning järjestab sellesuvalises järjekorras. Esemete list järjestada iga tegelase jaoks uuesti ümber ning lisada tegelaseleesimest n eset.
@@ -77,5 +77,27 @@ namespace KontrolltooMang
             return tege;
 
         }
+
+        static public void Uus_Mang(int tegCount) //Tegelaste info ja esemed väljastatakse ekraanile (kasutades vastavaid meetodeid).
+        {
+            Tegelane[] tege = MostTegelane(tegCount);
+            Mang mang = new Mang(tege);
+            foreach (Tegelane voitja in mang.SuurimEsemArvu())
+            {
+                Console.WriteLine(voitja.info());//Leitakse ja väljastatakse ekraanile suurima esemete arvuga tegelase info (kasutades vastavaid meetodeid).
+            }
+            Tegelane voit = mang.suurPunktArv();
+            Console.WriteLine(voit.info());
+            Console.WriteLine("Tegelasel on need esed:");
+            voit.väljastaEsemed();
+
+        }
+
+
+
+
+
+
+
     }
 }
