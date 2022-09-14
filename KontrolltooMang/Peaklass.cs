@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -61,24 +62,24 @@ namespace KontrolltooMang
         }
 
 
-        static Tegelane[] giveOutItems(Tegelane[] tege)
+        static Tegelane[] giveOutItems(Tegelane[] teges)
         {
             List<Ese> itemList = LoeEsemed();
             if (itemList.Count <= 0) throw new ArgumentOutOfRangeException();
-            foreach (Tegelane plr in tege)
+            foreach (Tegelane tege in teges)
             {
                 GenEse(itemList);
                 int amount = rnd.Next(2, 10); //Iga tegelase jaoks genereeritakse juhuslik arv n vahemikust [2,10]
                 for (int i = 0; i < amount; i++)
                 {
-                    plr.LisaEse(itemList[i]);
+                    tege.LisaEse(itemList[i]);
                 }
             }
-            return tege;
+            return teges;
 
         }
 
-        static public void Uus_Mang(int tegCount) //Tegelaste info ja esemed väljastatakse ekraanile (kasutades vastavaid meetodeid).
+        internal static void Uus_Mang(int tegCount) //Tegelaste info ja esemed väljastatakse ekraanile (kasutades vastavaid meetodeid).
         {
             Tegelane[] tege = MostTegelane(tegCount);
             Mang mang = new Mang(tege);
@@ -92,12 +93,5 @@ namespace KontrolltooMang
             voit.väljastaEsemed();
 
         }
-
-
-
-
-
-
-
     }
 }
